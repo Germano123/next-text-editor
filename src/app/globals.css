@@ -105,3 +105,12 @@ a {
     color-scheme: dark;
   }
 }
+
+.flex {
+  display: flex;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+}
