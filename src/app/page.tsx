@@ -1,21 +1,20 @@
 import styles from './page.module.css';
 import Container from './components/atoms/container';
-import Text from './components/atoms/text';
+import Expand from './components/atoms/expand';
+import Row from './components/atoms/row';
 import Column from './components/atoms/column';
-import TextEditor from './components/organism/text-editor';
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <Container
-        width="100vw" height="100vh" backColor='ff0000' center >
-        <Column width="50%" height='100%' center >
-          <TextEditor />
+    <main className={ styles.main }>
+      <Expand center>
+        {/* <Row> */}
+        <Column>
+          <div style={{ backgroundColor: "black", width: "100px", height: "100px" }}></div>
+          <div style={{ backgroundColor: "black", width: "100px", height: "100px" }}></div>
         </Column>
-        <Column width="50%" height='100%' backColor='0000ff' center >
-          <Text text='Right side' />
-        </Column>
-      </Container>
+        {/* </Row> */}
+      </Expand>
     </main>
   )
 }

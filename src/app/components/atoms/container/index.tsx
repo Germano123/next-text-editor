@@ -4,13 +4,12 @@ import clsx from 'clsx';
 interface IProps {
   padding?: string,
   margin?: string,
-  width: string,
-  height: string,
+  width?: string,
+  height?: string,
   center?: boolean,
   backColor?: string,
-  className?: string;
   borderRadius?: string,
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const Container = ({
@@ -21,7 +20,6 @@ const Container = ({
   center = false,
   backColor,
   borderRadius,
-  className = '',
   children,
 }: IProps) => {
   const styles = {
@@ -30,15 +28,15 @@ const Container = ({
     width,
     height,
     borderRadius,
-    backgroundColor: `#${backColor}`,
+    backgroundColor: `#ff00ff`,
   }
+  console.log(`flex ${ clsx({ center })}`)
 
   return (
-    <div className={ `flex ${ className } ${ clsx({ center })}` } style={ styles } >
+    <div className={ `flex ${ clsx({ center })}` } style={ styles } >
       { children }
     </div>
   );
 };
   
 export default Container;
-  

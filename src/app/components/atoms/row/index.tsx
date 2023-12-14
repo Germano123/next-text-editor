@@ -2,30 +2,23 @@ import React from 'react';
 import clsx from 'clsx';
 
 interface IProps {
-  width: string,
-  height: string,
   center?: boolean,
   backColor?: string,
-  className?: string;
   children: React.ReactNode;
 }
 
 const Row = ({
-  width,
-  height,
   center = false,
   backColor,
-  className = '',
   children,
 }: IProps) => {
   const styles = {
-    width,
-    height,
+    display: "flex",
     backgroundColor: `#${backColor}`,
   }
 
   return (
-    <div className={ clsx({ className, center }) } style={ styles } >
+    <div className={ clsx({ center }) } style={ styles } >
       { children }
     </div>
   );
